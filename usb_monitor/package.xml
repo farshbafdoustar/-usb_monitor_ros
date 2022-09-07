@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>usb_monitor</name>
+  <version>0.1.0</version>
+  <description>
+    usb monitoring package
+  </description>
+  <author email="Mahmoud@Farshbaf.net">Mahmoud Farshbaf</author>
+  <maintainer email="Mahmoud@Farshbaf.net">Mahmoud Farshbaf</maintainer>
+
+  <license>NONE</license>
+
+
+<buildtool_depend>catkin</buildtool_depend>
+<depend>rospy</depend>
+<depend>usb_monitor_msgs</depend>
+
+</package>

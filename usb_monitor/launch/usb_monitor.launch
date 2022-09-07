@@ -1,0 +1,11 @@
+<launch>
+
+    <arg name="cpu" default="$(optenv PROCESS_CPU 1,2)"/>
+    <arg name="priority" default="$(optenv PROCESS_PRIORITY 1)"/>
+
+    <node name="usb_monitor" pkg="usb_monitor" type="usb_monitor_node.py" output="screen"
+            launch-prefix="chrt -f $(arg priority) taskset -c $(arg cpu)">
+    </node>
+
+
+</launch>
