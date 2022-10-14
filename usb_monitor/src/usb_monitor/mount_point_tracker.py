@@ -88,7 +88,7 @@ class MountPoint:
         existing_mount_points = self.get_mount_points(source)
 
         # Build our mount point name.
-        mount_point = "{0}-{1}".format(constants.BASE_MOUNT_POINT,os.path.basename(source))
+        mount_point = "{0}_{1}".format(constants.BASE_MOUNT_POINT,os.path.basename(source))
 
         # Don"t mount if already mounted.
         if mount_point in existing_mount_points:
@@ -153,7 +153,7 @@ class MountPoint:
         (out,err)=p.communicate()
         if p.returncode != 0:
             shutil.rmtree(target)
-            rospy.logerr("Failed to mount %s to %s, error code = %d  : %s", 
+            rospy.logerr("Failed to mount %s to %s, error code = %d  : %s",
                             source,
                             target,
                             p.returncode,err)
